@@ -1,4 +1,4 @@
-#! /bin/bash
+# ! /bin/bash
 
 # age=25
 
@@ -18,7 +18,7 @@
 # echo $(( num1 / num2 ))
 # echo $(( num1 % num2 ))
 
-#bc stands for Basic Calculator.
+# bc stands for Basic Calculator.
 # num1=20.5
 # num2=5
 
@@ -96,13 +96,44 @@
 #     sleep 1
 # done
 
-n=1
+# n=1
 
-while [ $n -le 3 ]
-do
-    echo "$n"
-    (( n++ ))
-    gnome-terminal &
-done
+# while [ $n -le 3 ]
+# do
+#     echo "$n"
+#     (( n++ ))
+#     gnome-terminal &
+# done
+
+# for i in 1 2 3 4 5
+# do
+#     echo $i
+# done
+
+# for i in {1..10}
+# do
+#     echo $i
+# done
 
 
+# function Hello() {
+#     echo "Hello, World!"
+# }
+
+# Hello
+
+# function Hello() {
+#     name=$1
+#     echo "Hello, $name!"
+# }
+
+# Hello world
+# Hello Mark
+
+# function Hello() {
+#     readonly name=$1
+#     echo "Hello, $name!"
+# }
+
+# Hello world
+# Hello Mark

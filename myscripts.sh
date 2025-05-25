@@ -69,12 +69,40 @@
 #     echo "false"
 # fi
 
-echo -e "Enter the name of the file : \c"
-read file_name
+# echo -e "Enter the name of the file : \c"
+# read file_name
 
-if [ -e $file_name ]
-then
-    echo "$file_name"
-else
-    echo "$file_name not found"
-fi
+# if [ -e $file_name ]
+# then
+#     echo "$file_name"
+# else
+#     echo "$file_name not found"
+# fi
+
+# for i in {1..10..2}{START..END..INCREMENT}
+# do
+#     echo $i
+# done
+
+# for (( i=0; i<5; i++ ))
+# do
+#     echo $i
+# done
+
+# for command in ls pwd date
+# do
+#     echo "--------------------------$command-----------------"
+#     $command
+# done
+
+select name in mark john ben
+do
+    echo "$name selected"
+done
+
+function Hello() {
+    echo $1
+}
+
+Hello world
+
