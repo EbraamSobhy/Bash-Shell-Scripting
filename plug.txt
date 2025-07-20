@@ -1,0 +1,114 @@
+		" vim-plug plugin management" 
+		call plug#begin('~/.vim/plugged')
+		" Plugins
+		Plug 'preservim/nerdtree'
+		Plug 'junegunn/fzf.vim'
+		Plug 'sheerun/vim-polyglot'
+		Plug 'neoclide/coc.nvim', {'branch': 'release'}
+		Plug 'dense-analysis/ale'
+		Plug 'tpope/vim-fugitive'
+		Plug 'itchyny/lightline.vim'
+		Plug 'SirVer/ultisnips'
+		Plug 'tpope/vim-surround'
+		Plug 'tomtom/tcomment_vim'
+		Plug 'mattn/emmet-vim'
+		Plug 'tpope/vim-commentary'
+		Plug 'vim-airline/vim-airline'
+		Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+		call plug#end()
+
+		" Basic settings
+		syntax on
+		set number
+		set relativenumber
+		set tabstop=4
+		set shiftwidth=4
+		set expandtab
+		set smartindent
+		set clipboard=unnamedplus
+		set cursorline
+		set wildmenu
+		set incsearch
+		set ignorecase
+		set smartcase
+		set background=dark
+
+		" Key mappings
+		nnoremap <C-n> :NERDTreeToggle<CR>
+		nnoremap <C-p> :Files<CR>
+		nmap <C-/> :TComment<CR>
+		imap <C-e> <C-y>,  " Emmet expand
+
+		" ALE configuration (linting)
+		let g:ale_linters = {
+		\   'python': ['flake8', 'mypy'],
+		\   'javascript': ['eslint'],
+		\    'css': ['stylelint'],
+		\   'html': [],
+		\}
+
+		let g:ale_fixers = {
+		\   'python': ['autopep8', 'black'],
+		\   'javascript': ['prettier'],
+		\   'css':['prettier'],
+		\   'html':['prettier'],
+		\}
+		let g:ale_fix_on_save = 1
+
+		" coc.nvim configuration
+		" Run :CocInstall coc-pyright coc-tsserver coc-json coc-html coc-css coc-prettier
+		" for Python, JS/TS, formatting, etc.
+		" Example Coc config:
+
+		let g:coc_global_extensions = [
+		  \ 'coc-pyright',
+		  \ 'coc-tsserver',
+		  \ 'coc-json',
+		  \ 'coc-html',
+		  \ 'coc-css',
+		  \ 'coc-prettier',
+		  \ 'coc-eslint',
+		  \ 'coc-emmet',
+		  \ 'coc-react-refactor',
+		  \ ]
+
+		" UltiSnips
+		let g:UltiSnipsExpandTrigger="<tab>"
+		let g:UltiSnipsJumpForwardTrigger="<tab>"
+		let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+		" Use tab for trigger completion
+		inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+		inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+		" Use <CR> to confirm completion
+		inoremap <expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
+
+		" Copy selected text with Ctrl + C (Visual mode)
+		vnoremap <C-c> "+y
+
+		" Paste with Ctrl + V (Normal & Insert mode)
+		nnoremap <C-v> "+p
+		inoremap <C-v> <C-r>+
+
+		" Undo with Ctrl + Z
+		nnoremap <C-z> u
+		inoremap <C-z> <C-o>u
+
+		" Lightline
+		let g:lightline = {'colorscheme': 'wombat'}
+
+		" Improve search
+		set hlsearch
+		set incsearch
+
+		" Go
+		let g:go_def_mode='gopls'
+		let g:go_info_mode='gopls'
+
+		inoremap " ""<Left>
+		inoremap ' ''<Left>
+		inoremap ( ()<Left>
+		inoremap [ []<Left>
+		inoremap { {}<Left>
+

@@ -1,0 +1,45 @@
+
+Python:
+pip install flake8 mypy autopep8 black
+
+JavaScript:
+npm install -g eslint prettier
+
+Coc Extensions:
+In Vim, run:
+:CocInstall coc-pyright coc-tsserver coc-json coc-html coc-css coc-prettier
+
+:CocInstall coc-tsserver coc-html coc-css coc-json coc-prettier coc-eslint coc-emmet coc-react-refactor coc-vetur
+
+
+
+
+sudo apt update
+sudo apt install python3 python3-pip python3-venv
+
+python3 -m venv venv
+source venv/bin/activate
+
+pip install flake8 mypy autopep8 black
+
+flake8 --version
+mypy --version
+autopep8 --version
+black --version
+
+deactivate
+
+
+
+auto-complete button suggestions (like Intellisense or code suggestion popups) in Vim,
+
+" Use tab for trigger completion
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Use <CR> to confirm completion
+inoremap <expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
+
+:CocInstall coc-tsserver coc-pyright coc-json coc-html
+
+
