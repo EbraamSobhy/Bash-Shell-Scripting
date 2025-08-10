@@ -15,7 +15,7 @@ pip3 install fastapi uvicorn
 pip freeze > requirements.txt
 
 # Run the FastAPI application
-uvicorn main:app --reload
+uvicorn app:app --reload
 
 # Deactivate virtual environment when done
 deactivate
