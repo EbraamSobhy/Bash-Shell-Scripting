@@ -1,21 +1,22 @@
-# 1. Create virtual environment (venv)
+#!/bin/bash
+
+# Create virtual environment
 python3 -m venv fastapi-env
 
-# 2. Activate virtual environment
+# Activate virtual environment
 source fastapi-env/bin/activate
 
-# 3. Upgrade pip (recommended)
+# Upgrade pip
 pip install --upgrade pip
 
-# 4. Install FastAPI and Uvicorn
+# Install FastAPI and Uvicorn
 pip install fastapi uvicorn
 
-# 5. Save dependencies to requirements.txt
+# Save dependencies
 pip freeze > requirements.txt
 
-# 6. Run the FastAPI application
-# (Assuming you have an "app.py" file with `app = FastAPI()`)
+# Run FastAPI app (make sure app.py exists with "app = FastAPI()")
 uvicorn app:app --reload
 
-# 7. Deactivate virtual environment when done
+# Deactivate when finished
 deactivate
